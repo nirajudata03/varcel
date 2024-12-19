@@ -52,29 +52,32 @@ function cardAnimation() {
 cardAnimation()
 
 
-var steps = document.querySelectorAll("#steps_process_H")
-
-steps.forEach(function(elem){
-  elem.addEventListener("mousemove",function(){
-    console.log('Hello')
-    gsap.to(elem,{
-      opacity: 1,
-      ease: "power2.in",
-      duration:0.1
+function texthoverAnimation(){
+  var steps = document.querySelectorAll("#steps_process_H")
+  console.log(steps);
+  
+  steps.forEach(function(elem){
+    elem.addEventListener("mousemove",function(){
+      console.log('Hello')
+      gsap.to(elem,{
+        opacity: 1,
+        ease: "power2.in",
+        duration:0.1
+      })
+    })
+    
+    elem.addEventListener("mouseleave",function(){
+      console.log('Hello')
+      gsap.to(elem,{
+        opacity: 0.3,
+        ease: "power1.out",
+        duration:0.1
+      })
     })
   })
-  
-  elem.addEventListener("mouseleave",function(){
-    console.log('Hello')
-    gsap.to(elem,{
-      opacity: 0.3,
-      ease: "power1.out",
-      duration:0.1
-    })
-  })
+}
+texthoverAnimation()
 
-  
-  
-})
+
 
 
